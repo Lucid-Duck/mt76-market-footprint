@@ -1,3 +1,9 @@
+> **Snapshot notice.** This repository is an April 2026 snapshot. The canonical, evolving version of this document lives at
+> **https://github.com/morrownr/mt76/blob/main/info/MARKET-FOOTPRINT.md**
+> Use that link for the current state. This copy is preserved for historical reference.
+
+---
+
 # mt76-market-footprint
 
 A data-driven survey of which **MediaTek WiFi adapters and modules** are most commonly used by Linux users, across USB, PCIe/M.2, and SDIO form factors. Intended as input to the firmware-shipping decisions for [`morrownr/mt76`](https://github.com/morrownr/mt76).
