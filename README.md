@@ -100,7 +100,7 @@ Bottom line: MT7921/MT7922 are universally supported on current-LTS distros. MT7
 
 ### Security / CVE summary (19+ confirmed CVEs as of 2026-04-17)
 
-Across MediaTek-CNA pool (silicon/firmware) and kernel-CNA pool (mt76 driver): **19+ CVEs touching MT79xx chips since 2024**. Highlights:
+Across MediaTek-CNA pool (silicon/firmware) and kernel-CNA pool (mt76 driver): **19+ CVEs touching MT79xx chips since 2024**. Selected:
 
 - **CVE-2025-20672** (Bluetooth heap overflow, CVSS 9.8 Critical) -- MediaTek-CNA, affects MT792x BT firmware
 - **CVE-2024-26892**, **CVE-2024-27049**, **CVE-2024-46860**, **CVE-2024-57989**, **CVE-2025-39862** -- kernel-CNA mt76 driver UAFs / NULL derefs / list corruption (CVSS 5.5-7.8)
