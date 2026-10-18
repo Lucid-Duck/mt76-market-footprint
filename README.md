@@ -28,11 +28,11 @@ Tier 1 chip *families* that should ship firmware for `morrownr/mt76` (each cover
 | Chip family | Driver(s) | Form factors | Where it actually ships | Install-base signal |
 |-------------|-----------|--------------|-------------------------|---------------------|
 | **MT7921 / MT7921K (RZ608)** | mt7921e + mt7921u + mt7921s | PCIe M.2 + USB + SDIO | Lenovo ThinkPad E15 Gen 3 (dominant on linux-hardware.org top-host list), ThinkPad T14s, Dell Inspiron 14/16 5425/5625/5435/5635, HP Pavilion/Victus; AMD RZ608 laptops via Foxconn T99H245; Beelink SER5 / GMKtec K6 mini-PCs; USB: Netgear A8000/A7500, Alfa AWUS036AXML; ChromeOS Kompanio SoCs via SDIO | **6,351 PCIe probes** (4,714 @ 14c3:7961 + 1,637 @ 14c3:0608). Earliest probe Feb 2022. Generic `0e8d:7961` AliExpress USB listing: **10,000+ lifetime orders** |
-| **MT7922 (RZ616)** | mt7921e (PCIe-only) | PCIe M.2 | Lenovo ThinkPad L/T AMD Gen 3-4, HP EliteBook 6xx/8xx G10-G11 + ProBook 445/455 G10, Framework Laptop 13/16, System76 Pangolin / Thelio R5-N1 (AW-XM514NF soldered), Tuxedo InfinityBook AMD Gen10; **gaming handhelds** ASUS ROG Ally (2023) + Ally X (2024) + Lenovo Legion Go (2023) + Legion Go S (2025); mini-PCs **GMKtec M6 Ultra** (829 Amazon reviews -- biggest single MediaTek PCIe consumer volume channel), Minisforum UM890 Pro | **5,538 PCIe probes** (4,758 @ 14c3:0616 + 780 @ 14c3:7922). Fenvi MT7922 PCIe card family on AliExpress: **~10,000+ lifetime orders across 3 listings** |
+| **MT7922 (RZ616)** | mt7921e (PCIe-only) | PCIe M.2 | Lenovo ThinkPad L/T AMD Gen 3-4, HP EliteBook 6xx/8xx G10-G11 + ProBook 445/455 G10, Framework Laptop 13/16, System76 Pangolin / Thelio R5-N1 (AW-XM514NF soldered), Tuxedo InfinityBook AMD Gen10; **gaming handhelds** ASUS ROG Ally (2023) + Ally X (2024) + Lenovo Legion Go (2023) + Legion Go S (2025); mini-PCs **GMKtec M6 Ultra** (829 Amazon reviews, biggest single MediaTek PCIe consumer volume channel), Minisforum UM890 Pro | **5,538 PCIe probes** (4,758 @ 14c3:0616 + 780 @ 14c3:7922). Fenvi MT7922 PCIe card family on AliExpress: **~10,000+ lifetime orders across 3 listings** |
 | **MT7925 (RZ717)** | mt7925e + mt7925u | PCIe M.2 + USB | HP OmniBook 7 14/16 (largest consumer driver), Lenovo ThinkPad T14 Gen 6 AMD / Yoga 7 / ThinkBook 16 G7+; Framework Laptop 13 (AMD Strix Point) + Framework Desktop default; System76 Thelio Mira r4-n4; **Slimbook Executive 2026** (Linux-first vendor, NEW finding); Ubuntu Certified HP ZBook 8 G1ah, Dell Pro Precision 9 Tower T2, Lenovo ThinkStation P8; USB: Netgear A9000 | **1,105 PCIe probes** (866 @ 14c3:7925 + 239 @ 14c3:0717). Earliest probe Apr 2024; ramping hard. Framework sells module separately at CAD $40 (~USD $29) |
 | **MT7902** | mt7921e (PCIe-only) | PCIe M.2 + SDIO ID assigned | ASUS VivoBook X1605VA / K6602VV / K3605ZU family (all top-10 LHW hosts are ASUS VivoBook SKUs), HP Laptop 15-fd, Acer Aspire A315-24P / A314-23P / A315-59G | **1,510 PCIe probes**. Driver in torvalds master (Sean Wang 11-patch series, authored 2026-02-18/19, committed by Felix Fietkau nbd tree 2026-03-24). Wi-Fi 6E 1x1 (NOT Wi-Fi 7). Earliest probe Nov 2023 |
-| **MT7920** | mt7921e (PCIe-only) | PCIe M.2 | Lenovo ThinkPad E14 Gen 7 AMD + E16 Gen 3 AMD (PSREF-explicit MediaTek Wi-Fi 6 MT7920); Lenovo IdeaPad Slim 3 14AHP10 83K9; THUNDEROBOT R15; Acer Aspire AG15-71P | 71 PCIe probes -- young chip, Apr 2025 earliest probe |
-| **MT7612 / MT7662** | mt76x2e + mt76x2u | PCIe + USB | Alfa AWUS036ACM (USB; 393 Mb/s in `morrownr/USB-WiFi` Speed_Comparison_Test), Netgear A6210 (**5,100 Amazon reviews -- highest MediaTek USB on Amazon US**), AVM FRITZ!WLAN AC 860 (DACH staple, 158 linux-hardware.org probes), Microsoft Xbox One Wireless Adapter | Shared `mt7662.bin` serves PCIe + USB per kernel source: both `mt76x2/{pci,usb}.c` declare `MODULE_FIRMWARE(MT7662_FIRMWARE)` |
+| **MT7920** | mt7921e (PCIe-only) | PCIe M.2 | Lenovo ThinkPad E14 Gen 7 AMD + E16 Gen 3 AMD (PSREF-explicit MediaTek Wi-Fi 6 MT7920); Lenovo IdeaPad Slim 3 14AHP10 83K9; THUNDEROBOT R15; Acer Aspire AG15-71P | 71 PCIe probes, young chip, Apr 2025 earliest probe |
+| **MT7612 / MT7662** | mt76x2e + mt76x2u | PCIe + USB | Alfa AWUS036ACM (USB; 393 Mb/s in `morrownr/USB-WiFi` Speed_Comparison_Test), Netgear A6210 (**5,100 Amazon reviews, highest MediaTek USB on Amazon US**), AVM FRITZ!WLAN AC 860 (DACH staple, 158 linux-hardware.org probes), Microsoft Xbox One Wireless Adapter | Shared `mt7662.bin` serves PCIe + USB per kernel source: both `mt76x2/{pci,usb}.c` declare `MODULE_FIRMWARE(MT7662_FIRMWARE)` |
 | **MT7610** | mt76x0e + mt76x0u | PCIe (~0) + USB | Alfa AWUS036ACHM (USB; "absolute goat" for range on Reddit), TP-Link TL-WDN5200, AVM FRITZ!WLAN USB Stick AC 430 | Highest Stack Exchange help-volume of any mt76 USB chip (19 questions, 289K total views). mt7610e.bin (PCIe) and mt7610u.bin (USB) are **distinct blobs**, not shared (kernel `mt76x0/mt76x0.h` defines separate `#define` macros) |
 | **MT7663U / MT7663E** | mt7615 (USB stub + PCIe) | PCIe + USB | Legacy: Acer Aspire A315/A317 notebook family (54 LHW probes); minimal retail USB-stick presence; LG OEM module `043e:310c` | Firmware `mt7663_n9_v3.bin` + `mt7663pr2h.bin` already upstream |
 
@@ -46,12 +46,12 @@ Tier 1 chip *families* that should ship firmware for `morrownr/mt76` (each cover
 | Lenovo Legion Go | 2023 | **MT7922 / RZ616** | mt7921e | Amazon listing + Lenovo support |
 | Lenovo Legion Go S | 2025 | **MediaTek** (Lenovo driver catalogue) | mt7921e | Lenovo WLAN driver page |
 | AOKZOE A1 | 2023 | **RZ608 / MT7921** | mt7921e | Community + spec |
-| MSI Claw A1M / Claw 8 (2025) | 2024/2025 | Intel Killer BE1750 (no MediaTek) | -- | MSI spec |
-| AyaNeo Kun | 2024 | Intel AX210 (no MediaTek) | -- | Spec sheet |
-| Valve Steam Deck LCD | 2022 | Realtek RTL8822CE (no MediaTek) | -- | iFixit |
-| Valve Steam Deck OLED | 2023 | Qualcomm Quectel FC66E (no MediaTek) | -- | iFixit |
-| GPD Win 4 / Win Max 2 / Pocket 4 | 2023-2025 | "Wi-Fi 6E" unspecified | -- | Spec lists no chip |
-| OneXPlayer, most other AyaNeo, Anbernic, AOKZOE A1 Pro | -- | "Wi-Fi 6E" unspecified | -- | Specs silent on chip |
+| MSI Claw A1M / Claw 8 (2025) | 2024/2025 | Intel Killer BE1750 (no MediaTek) | n/a | MSI spec |
+| AyaNeo Kun | 2024 | Intel AX210 (no MediaTek) | n/a | Spec sheet |
+| Valve Steam Deck LCD | 2022 | Realtek RTL8822CE (no MediaTek) | n/a | iFixit |
+| Valve Steam Deck OLED | 2023 | Qualcomm Quectel FC66E (no MediaTek) | n/a | iFixit |
+| GPD Win 4 / Win Max 2 / Pocket 4 | 2023-2025 | "Wi-Fi 6E" unspecified | n/a | Spec lists no chip |
+| OneXPlayer, most other AyaNeo, Anbernic, AOKZOE A1 Pro | n/a | "Wi-Fi 6E" unspecified | n/a | Specs silent on chip |
 
 ### Premium PC platform segment (2024-2026)
 
@@ -60,7 +60,7 @@ Tier 1 chip *families* that should ship firmware for `morrownr/mt76` (each cover
 - **Intel Core Ultra 200V (Lunar Lake)**: Intel Killer BE1750 / BE200 dominant, **zero MediaTek** SKU located.
 - **Apple M4**: Broadcom BCM4388 (moving to in-house silicon), **zero MediaTek**.
 
-### ChromeOS (Chromebook Plus) segment -- MediaTek's strongest 2024-2026 laptop segment
+### ChromeOS (Chromebook Plus) segment: MediaTek's strongest 2024-2026 laptop segment
 
 MediaTek Kompanio SoCs (838 + Ultra 910) pair with MT7921S (SDIO) for integrated WiFi on:
 - Lenovo Chromebook Duet Gen 9 (Kompanio 838)
@@ -72,7 +72,7 @@ Few-million-unit EDU channel volume. linux-hardware.org materially under-counts 
 
 ### Mini-PC segment
 
-Confirmed MediaTek shippers: **GMKtec M6 Ultra** (MT7922, 829 Amazon reviews -- alone exceeds combined review volume of every standalone MediaTek PCIe/M.2 card ASIN on Amazon US), GMKtec M5 Ultra / NucBox K6, Minisforum UM890 Pro, Beelink SER5 (MT7921K, 119 reviews), Geekom A7/GT13 Pro/XT12 Pro (MT7922 via AzureWave AW-XB591NF).
+Confirmed MediaTek shippers: **GMKtec M6 Ultra** (MT7922, 829 Amazon reviews, alone exceeds combined review volume of every standalone MediaTek PCIe/M.2 card ASIN on Amazon US), GMKtec M5 Ultra / NucBox K6, Minisforum UM890 Pro, Beelink SER5 (MT7921K, 119 reviews), Geekom A7/GT13 Pro/XT12 Pro (MT7922 via AzureWave AW-XB591NF).
 
 Confirmed non-MediaTek: Apple Mac mini M4 (Broadcom BCM4388), Minisforum UM790 Pro (Killer AX1675), Beelink SER8 (Intel AX200), Beelink Mini S12 Pro (Intel AX101), Mini S12 (Realtek), NiPoGi GK3 Plus (Realtek), Intel NUC 13, ASUS NUC 14/15 (Intel).
 
@@ -80,7 +80,7 @@ Confirmed non-MediaTek: Apple Mac mini M4 (Broadcom BCM4388), Minisforum UM790 P
 
 MediaTek adoption in this segment is **AMD-gated**:
 
-Confirmed MediaTek: Lenovo ThinkCentre M75q Gen 5 Tiny (MT7921 AND MT7925 BTO options per PSREF 2026-03-13), Acer Veriton X4240G (MT7921 per driver PCI ID), **HP Z2 Mini G1a (AMD Strix Halo workstation -- MediaTek MT7925 + BT 5.4, first HP Z-series workstation with MediaTek per HP QuickSpecs c09133726)**.
+Confirmed MediaTek: Lenovo ThinkCentre M75q Gen 5 Tiny (MT7921 AND MT7925 BTO options per PSREF 2026-03-13), Acer Veriton X4240G (MT7921 per driver PCI ID), **HP Z2 Mini G1a (AMD Strix Halo workstation, MediaTek MT7925 + BT 5.4, first HP Z-series workstation with MediaTek per HP QuickSpecs c09133726)**.
 
 Confirmed non-MediaTek: Lenovo ThinkStation P3 Tower/Tiny/Ultra + P5 + P7 + P8 (Intel AX211 or AMD RZ616 which IS MT7922 but Lenovo brands as AMD not MediaTek), ThinkCentre M75s Gen 5 SFF (Realtek + RZ616), M90a Gen 6 AIO (Intel/Realtek), Dell OptiPlex 7020 Plus/Micro/SFF, Dell Precision 3680, HP EliteDesk 800 G9, HP Z2 G9 workstations, Apple Mac Studio / Mac Pro M4 (Broadcom).
 
@@ -93,7 +93,7 @@ Confirmed non-MediaTek: Lenovo ThinkStation P3 Tower/Tiny/Ultra + P5 + P7 + P8 (
 | MT7925 | 6.7 | HWE only | yes | no | yes | yes | yes | no | yes |
 | MT7920 | 6.10 | HWE only | yes | no | yes | yes | yes | no | yes |
 | MT7902 | in mainline master via nbd tree 2026-03-24; v7.1 release track | not yet (6.14 HWE) | not yet | no | not yet | yes (6.17 reached) | not yet | no | not yet |
-| MT7927 | not upstream | -- | -- | -- | -- | -- | -- | -- | -- |
+| MT7927 | not upstream | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
 | MT7612/7662, MT7610, MT7663 | 4.x | yes | yes | yes | yes | yes | yes | yes | yes |
 
 Bottom line: MT7921/MT7922 are universally supported on current-LTS distros. MT7925/MT7920 require Debian 13+, Fedora 41+, RHEL 10, Leap 16, or Ubuntu 24.04 HWE. MT7902 needs kernel 6.17+ (Fedora 43 today, else wait for distro bumps). MT7927 needs distro kernels that don't exist yet.
@@ -102,13 +102,13 @@ Bottom line: MT7921/MT7922 are universally supported on current-LTS distros. MT7
 
 Across MediaTek-CNA pool (silicon/firmware) and kernel-CNA pool (mt76 driver): **19+ CVEs touching MT79xx chips since 2024**. Selected:
 
-- **CVE-2025-20672** (Bluetooth heap overflow, CVSS 9.8 Critical) -- MediaTek-CNA, affects MT792x BT firmware
-- **CVE-2024-26892**, **CVE-2024-27049**, **CVE-2024-46860**, **CVE-2024-57989**, **CVE-2025-39862** -- kernel-CNA mt76 driver UAFs / NULL derefs / list corruption (CVSS 5.5-7.8)
-- **CVE-2026-20423**, **CVE-2026-20436** -- WLAN STA OOB writes, High, published March 2026
+- **CVE-2025-20672** (Bluetooth heap overflow, CVSS 9.8 Critical): MediaTek-CNA, affects MT792x BT firmware
+- **CVE-2024-26892**, **CVE-2024-27049**, **CVE-2024-46860**, **CVE-2024-57989**, **CVE-2025-39862**: kernel-CNA mt76 driver UAFs / NULL derefs / list corruption (CVSS 5.5-7.8)
+- **CVE-2026-20423**, **CVE-2026-20436**: WLAN STA OOB writes, High, published March 2026
 
 MT7925 lifetime CVE count across both CNAs: **11+ (not 7 as earlier count suggested)**. MT7921 family: 9+ kernel-side CVEs. MT7922, MT7902 have zero chip-specific CVEs (too new or architecturally distinct). Full table in `data/adapters.csv` and `references/distro-bugs.md`.
 
-### OpenWrt Table of Hardware -- MediaTek-radio SBC / router (consumer-accessible)
+### OpenWrt Table of Hardware: MediaTek-radio SBC / router (consumer-accessible)
 
 Factory-MediaTek SBC in ToH: BananaPi BPI-R4, BPI-R3, BPI-R3 Mini, BPI-R64, BPI-R2; Seeed LinkStar H68K (Rockchip RK3568 + MT7921E M.2); OpenWrt One (MT7981BA reference); Olimex RT5350F.
 
@@ -124,21 +124,21 @@ Factory-MediaTek SBC lifetime volume estimated at ~50K-150K units; user-installe
 
 ### Watch item, not yet shippable
 
-- **MT7927** -- Wi-Fi 7 2x2 DBDC PCIe-only. Already **293 linux-hardware.org probes** on enthusiast desktops (Gigabyte Z790/X670E AORUS PRO X, System76 Thelio Mira). No mainline driver; **v4 patch series by Javier Tia posted 2026-03-26** to linux-wireless patchwork, state `New`. Patches will bind MT7927 to mt7925e.ko (NOT mt7921e.ko) and add firmware path `mediatek/mt7927/WIFI_RAM_CODE_MT6639_2_1.bin` (MT6639 is MediaTek's internal codename). Firmware-side gitlab MR !946 (Draft) covers only Bluetooth blob; MediaTek has not submitted Wi-Fi firmware. Shipping hardware: ASUS ROG X870E boards, Lenovo Legion Pro 7 16AFR10H (Legion Pro 7 Gen 10, machine type 83RU), MSI X870E Ace Max, TP-Link TBE550E PCIe, System76 Thelio Mira r4-n4 factory option, Framework Desktop (AMD Strix Halo) factory option. `morrownr/mt76` cannot ship MT7927 firmware today; expected upstream layout is `mediatek/mt7927/` subdir paralleling MT7925.
+- **MT7927**: Wi-Fi 7 2x2 DBDC PCIe-only. Already **293 linux-hardware.org probes** on enthusiast desktops (Gigabyte Z790/X670E AORUS PRO X, System76 Thelio Mira). No mainline driver; **v4 patch series by Javier Tia posted 2026-03-26** to linux-wireless patchwork, state `New`. Patches will bind MT7927 to mt7925e.ko (NOT mt7921e.ko) and add firmware path `mediatek/mt7927/WIFI_RAM_CODE_MT6639_2_1.bin` (MT6639 is MediaTek's internal codename). Firmware-side gitlab MR !946 (Draft) covers only Bluetooth blob; MediaTek has not submitted Wi-Fi firmware. Shipping hardware: ASUS ROG X870E boards, Lenovo Legion Pro 7 16AFR10H (Legion Pro 7 Gen 10, machine type 83RU), MSI X870E Ace Max, TP-Link TBE550E PCIe, System76 Thelio Mira r4-n4 factory option, Framework Desktop (AMD Strix Halo) factory option. `morrownr/mt76` cannot ship MT7927 firmware today; expected upstream layout is `mediatek/mt7927/` subdir paralleling MT7925.
 
 ### Explicit exclusions
 
-- **MT7601U** -- standalone `mt7601u` driver, not the unified mt76 framework. Firmware ships separately upstream.
-- **Router-class chips** (MT7603, MT7615, MT7915, MT7916, MT7986, MT7996, MT7988) -- router SoCs, excluded per the issue #5 framing. BPI-R4 / BPI-R3 board-level coverage noted above because those boards accept consumer mt76 client cards.
+- **MT7601U**: standalone `mt7601u` driver, not the unified mt76 framework. Firmware ships separately upstream.
+- **Router-class chips** (MT7603, MT7615, MT7915, MT7916, MT7986, MT7996, MT7988): router SoCs, excluded per the issue #5 framing. BPI-R4 / BPI-R3 board-level coverage noted above because those boards accept consumer mt76 client cards.
 
 ### Firmware-blob sharing (per kernel source, 2026-04-17)
 
 | Driver family | Blob(s) | Shared between PCIe + USB? | Notes |
 |---------------|---------|----------------------------|-------|
-| mt76x0 | `mt7610e.bin` (PCIe), `mt7650e.bin` (PCIe only), `mt7610u.bin` (USB) | **No -- distinct files.** `mt76x0u.ko` declares `MT7610E_FIRMWARE` as preferred-then-fallback to `MT7610U_FIRMWARE` at runtime | Per `mt76x0/mt76x0.h` #define macros |
+| mt76x0 | `mt7610e.bin` (PCIe), `mt7650e.bin` (PCIe only), `mt7610u.bin` (USB) | **No, distinct files.** `mt76x0u.ko` declares `MT7610E_FIRMWARE` as preferred-then-fallback to `MT7610U_FIRMWARE` at runtime | Per `mt76x0/mt76x0.h` #define macros |
 | mt76x2 | `mt7662.bin` + `mt7662_rom_patch.bin` | **Yes.** Both `pci.c` and `usb.c` declare `MODULE_FIRMWARE(MT7662_FIRMWARE)` | Single blob pair serves MT7612E/U, MT7662E/U, MT7602E |
 | mt7921 | `WIFI_RAM_CODE_MT7961_1.bin` + patch | **Yes.** mt7921e + mt7921u + mt7921s all MODULE_FIRMWARE same blob | SDIO variant via ChromeOS Kompanio |
-| mt7921e (MT7920-only) | `WIFI_RAM_CODE_MT7961_1a.bin` + 1a patch | -- | Distinct `_1a` blob variant |
+| mt7921e (MT7920-only) | `WIFI_RAM_CODE_MT7961_1a.bin` + 1a patch | n/a | Distinct `_1a` blob variant |
 | mt7921e (MT7922-only) | `WIFI_RAM_CODE_MT7922_1.bin` + patch | PCIe-only | Distinct from MT7921 |
 | mt7921e (MT7902-only) | `WIFI_RAM_CODE_MT7902_1.bin` + patch | PCIe-only | Same blob for PCIe and SDIO (no separate SDIO firmware) |
 | mt7925 | `mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin` + patch | **Yes.** Both mt7925e + mt7925u MODULE_FIRMWARE same subdir blob pair | Subdir layout |
